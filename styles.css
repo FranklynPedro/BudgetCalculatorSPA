@@ -1,0 +1,105 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode colors */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+/* Dark mode colors */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Container styling with theme support */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode .container {
+    background-color: #ffffff;
+}
+
+body.dark-mode .container {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Header and theme toggle */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu button, .section button {
+    background-color: #e0e0e0;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .menu button, body.dark-mode .section button {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.section {
+    display: none;
+    margin-top: 20px;
+}
+
+.section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+}
+
+/* Chart container */
+.chart-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+body.dark-mode .chart-container {
+    background-color: #333333;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}

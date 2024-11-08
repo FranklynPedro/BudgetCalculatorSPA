@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" sizes="512x512" href="icon-512x512.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <header>
+            <h1>Budget Calculator</h1>
+            <button id="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </header>
+
+        <div class="menu">
+            <button onclick="showSection('income')">Enter Income</button>
+            <button onclick="showSection('expenses')">Enter Expenses</button>
+            <button onclick="showSection('summary')">View Budget Summary</button>
+        </div>
+
+        <div id="income-section" class="section">
+            <h2>Enter Income</h2>
+            <label for="income">Total Income (R):</label>
+            <input type="number" id="income" min="0" step="0.01">
+            <button onclick="saveIncome()">Save Income</button>
+        </div>
+
+        <div id="expenses-section" class="section">
+            <h2>Enter Expenses</h2>
+            <label for="housing">Housing (Rent/Mortgage):</label>
+            <input type="number" id="housing" min="0" step="0.01"><br>
+            <label for="utilities">Utilities (Electricity, Water, etc.):</label>
+            <input type="number" id="utilities" min="0" step="0.01"><br>
+            <label for="transportation">Transportation (Gas, Public Transport, etc.):</label>
+            <input type="number" id="transportation" min="0" step="0.01"><br>
+            <label for="food">Food (Groceries, Eating Out):</label>
+            <input type="number" id="food" min="0" step="0.01"><br>
+            <label for="entertainment">Entertainment (Movies, Events, etc.):</label>
+            <input type="number" id="entertainment" min="0" step="0.01"><br>
+            <label for="other">Other Expenses:</label>
+            <input type="number" id="other" min="0" step="0.01"><br>
+            <button onclick="saveExpenses()">Save Expenses</button>
+        </div>
+
+        <div id="summary-section" class="section">
+            <h2>Budget Summary</h2>
+            <p id="summary"></p>
+            <div class="chart-container">
+                <canvas id="budgetChart"></canvas>
+            </div>
+            <button onclick="clearSummary()">Clear Summary</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
